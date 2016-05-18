@@ -4,7 +4,8 @@ import { connect } from 'react-redux'
 
 function TriviaList (props) {
   const { trivia } = props; 
-
+  let index = 0;
+  
   if (trivia.length === 0) return null
     
   return (
@@ -12,7 +13,9 @@ function TriviaList (props) {
       {
         trivia.map(triviaString => {
           return (
-            <li>
+            <li
+              key={index++}
+            >
               <p>{triviaString}</p>
             </li>
           )
