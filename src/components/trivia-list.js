@@ -5,7 +5,7 @@ export function TriviaList(props) {
   const { trivia } = props
 
   if (trivia.length === 0) return null
-
+    console.log("This is trivia in list ", trivia);
   return (
     <ul>
       {

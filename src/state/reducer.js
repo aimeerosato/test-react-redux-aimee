@@ -2,10 +2,11 @@ import { combineReducers } from 'redux'
 
 function trivia (state = [], action) {
   switch (action.type) {
-    //
-    // Looks like I need a case
-    //
-
+    case 'TRIVIA_INPUT':
+      state.push(action.payload);
+      console.log(state);
+      return state;
+  
     default:
       return state
   }

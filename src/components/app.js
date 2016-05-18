@@ -7,7 +7,7 @@ export function App(props) {
     <main>
       <h1>Welcome to the Doorsteps Trivia!</h1>
       <GetNumberTriviaBtn />
-      <TriviaList />
+      <TriviaList /> 
     </main>
   )
 }

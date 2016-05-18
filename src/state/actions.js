@@ -1,4 +1,5 @@
-import fetch from 'isomorphic-fetch'
+import fetch from 'isomorphic-fetch';
+import dispatch from 'redux-thunk';
 
 //
 // create an action creator to:
@@ -11,12 +12,20 @@ export function getNumberTrivia (number) {
 
   const triviaUrl = `http://numbersapi.com/${number}?json`
 
-  fetch(triviaUrl).then(function(response) {
-    return response.json();
-  })
-    .then(function(trivia) {
-      console.log("Here is the trivia: ", trivia.text);
+  return function(dispatch) {
+    fetch(triviaUrl)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(trivia) {
+        dispatch ({
+          type: 'TRIVIA_INPUT',
+          payload: trivia.text
+      });
     });
+  }
+
+  
   //
   // I need some code!!!
   //
