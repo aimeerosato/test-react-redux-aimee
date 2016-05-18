@@ -11,6 +11,12 @@ export function getNumberTrivia (number) {
 
   const triviaUrl = `http://numbersapi.com/${number}?json`
 
+  fetch(triviaUrl).then(function(response) {
+    return response.json();
+  })
+    .then(function(trivia) {
+      console.log("Here is the trivia: ", trivia.text);
+    });
   //
   // I need some code!!!
   //
