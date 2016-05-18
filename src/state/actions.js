@@ -1,13 +1,6 @@
 import fetch from 'isomorphic-fetch';
 import dispatch from 'redux-thunk';
 
-//
-// create an action creator to:
-//
-// * fetch a piece of trivia
-// * dispatch data to the redux store
-//
-
 export function getNumberTrivia (number) {
 
   const triviaUrl = `http://numbersapi.com/${number}?json`
@@ -25,12 +18,4 @@ export function getNumberTrivia (number) {
     });
   }
 
-  
-  //
-  // I need some code!!!
-  //
-  // Hints:
-  //  * http://redux.js.org/
-  //  * async? ¯\_(ツ)_/¯
-  //
 }

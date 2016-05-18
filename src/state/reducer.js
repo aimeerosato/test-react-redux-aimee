@@ -1,14 +1,15 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from 'redux';
+import { List } from 'immutable';
 
-function trivia (state = [], action) {
+// Used an immutable List instead of an array to avoid mutating state
+
+function trivia (state = List(), action) {
   switch (action.type) {
     case 'TRIVIA_INPUT':
-      state.push(action.payload);
-      console.log(state);
-      return state;
+      return state.push(action.payload);
   
     default:
-      return state
+      return state;
   }
 }
 

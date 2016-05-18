@@ -17,7 +17,7 @@ class GetNumberTriviaBtn extends React.Component {
 
   _requestRandomNumberTrivia () {
     const { dispatch } = this.props
-
+    //Goes into the action to make the async call
     dispatch(getNumberTrivia(this._generateRandomInt()))
   }
 

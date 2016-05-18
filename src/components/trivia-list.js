@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-export function TriviaList(props) {
-  const { trivia } = props
+
+function TriviaList (props) {
+  const { trivia } = props; 
 
   if (trivia.length === 0) return null
-    console.log("This is trivia in list ", trivia);
+    
   return (
     <ul>
       {
@@ -18,13 +19,14 @@ export function TriviaList(props) {
         })
       }
     </ul>
-  )
+  )  
 }
 
-const mapStateToProps = state => {
+
+function mapStateToProps (state) {
   return {
     trivia: state.trivia
-  }
+  };
 }
 
 export default connect(mapStateToProps)(TriviaList)
